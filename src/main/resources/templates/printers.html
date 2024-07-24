@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Printers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div class="container">
+    <h1>Printers</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>IP Address</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="printer : ${printers}">
+            <td th:text="${printer.id}">1</td>
+            <td th:text="${printer.ipAddress}">192.168.0.1</td>
+            <td th:text="${printer.name}">Printer Name</td>
+            <td th:text="${printer.location}">Location</td>
+            <td>
+                <a th:href="@{/printers/delete/{id}(id=${printer.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/printers/add" class="btn btn-primary">Add Printer</a>
+</div>
+</body>
+</html>
