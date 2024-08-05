@@ -2,8 +2,8 @@ package com.example.printer_manager.service;
 
 import com.example.printer_manager.model.Printer;
 import com.example.printer_manager.model.PrinterData;
-import com.example.printer_manager.repository.PrinterRepository;
 import com.example.printer_manager.repository.PrinterDataRepository;
+import com.example.printer_manager.repository.PrinterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

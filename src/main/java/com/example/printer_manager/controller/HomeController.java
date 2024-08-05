@@ -1,3 +1,4 @@
+
 package com.example.printer_manager.controller;
 
 import org.springframework.stereotype.Controller;

@@ -3,7 +3,6 @@ package com.example.printer_manager.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 
 @Entity
 public class Printer {
@@ -17,9 +16,6 @@ public class Printer {
     private String name;
     private String location;
 
-    @OneToMany(mappedBy = "printer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PrinterData> printerData;
-    // Getters and setters
 
     public Long getId() {
         return id;

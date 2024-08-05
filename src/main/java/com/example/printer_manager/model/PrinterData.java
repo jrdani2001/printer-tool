@@ -11,15 +11,14 @@ public class PrinterData {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "printer_id", nullable = false)
+    @JoinColumn(name = "printer_id")
     private Printer printer;
 
     private Timestamp timestamp;
 
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "json")
     private String data;
 
-    // Getters and setters
 
     public Long getId() {
         return id;

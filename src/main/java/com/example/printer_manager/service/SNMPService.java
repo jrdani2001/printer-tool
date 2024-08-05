@@ -1,10 +1,10 @@
 package com.example.printer_manager.service;
 
 import org.snmp4j.*;
-import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.smi.*;
 import org.snmp4j.mp.*;
 import org.snmp4j.transport.*;
+import org.snmp4j.event.*;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
