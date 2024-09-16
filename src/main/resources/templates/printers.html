@@ -2,34 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Printers</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/printer.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-<div class="container">
-    <h1>Printers</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>IP Address</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="printer : ${printers}">
-            <td th:text="${printer.id}">1</td>
-            <td th:text="${printer.ipAddress}">192.168.0.1</td>
-            <td th:text="${printer.name}">Printer Name</td>
-            <td th:text="${printer.location}">Location</td>
-            <td>
-                <a th:href="@{/printers/delete/{id}(id=${printer.id})}" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <a href="/printers/add" class="btn btn-primary">Add Printer</a>
+<div class="header">
+    <nav>
+        <ul>
+            <li><a href="#">Printers</a></li>
+            <li><a href="#">Add printer</a></li>
+            <li><a href="#">Report</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="view-switcher">
+    <button class="grid-view"><i class="icon-grid"></i></button>
+    <button class="list-view"><i class="icon-list"></i></button>
+</div>
+
+<div class="grid-container">
+    <div class="grid">
+        <!-- Loop through printers from the model -->
+        <div th:each="printer : ${printers}" class="printer-item">
+            <a th:href="@{'/printer/' + ${printer.id}}">
+                <img src="/images/printer-icon.png" alt="Printer Icon" class="printer-icon">
+                <div class="printer-details">
+                    <p th:text="${printer.manufacturer}"></p>
+                    <p th:text="${printer.sn}"></p>
+                    <p th:text="${printer.ip}"></p>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -1,20 +1,19 @@
-// Printer.java
+// Counter.java
 package com.example.printer_manager.model;
 
 import jakarta.persistence.*;
 
-
 @Entity
-public class Printer {
+public class Counter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String manufacturer;
     private String type;
-    private String sn;  // Serial Number
     private String ip;
     private String location;
+    private String sn;  // Serial Number
+    private Long counter;
 
     // Getters and Setters
 
@@ -27,28 +26,12 @@ public class Printer {
         this.id = id;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getSn() {
-        return sn;
-    }
-
-    public void setSn(String sn) {
-        this.sn = sn;
     }
 
     public String getIp() {
@@ -65,5 +48,21 @@ public class Printer {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getSn() {
+        return sn;
+    }
+
+    public void setSn(String sn) {
+        this.sn = sn;
+    }
+
+    public Long getCounter() {
+        return counter;
+    }
+
+    public void setCounter(Long counter) {
+        this.counter = counter;
     }
 }
