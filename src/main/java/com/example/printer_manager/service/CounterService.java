@@ -17,7 +17,11 @@ public class CounterService {
         return counterRepository.findAll();
     }
 
-    public void saveCounter(Counter counter) {
-        counterRepository.save(counter);
+    public List<Counter> getCountersByIp(String ip) {
+        return counterRepository.findByIp(ip);
+    }
+
+    public Counter saveCounter(Counter counter) {
+        return counterRepository.save(counter);
     }
 }
