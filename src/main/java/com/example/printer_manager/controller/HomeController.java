@@ -18,6 +18,6 @@ public class HomeController {
     public String home(Model model) {
         List<Printer> printers = printerService.getAllPrinters();
         model.addAttribute("printers", printers);
-        return "printers";  // Ez a 'printers.html' fájlhoz irányít
+        return "printers";  // Returns the 'printers.html' template
     }
 }
