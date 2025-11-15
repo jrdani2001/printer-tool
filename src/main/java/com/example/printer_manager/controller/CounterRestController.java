@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/counters")
-@CrossOrigin(origins = "*")
 public class CounterRestController {
 
     @Autowired

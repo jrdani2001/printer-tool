@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/printers")
-@CrossOrigin(origins = "*")
 public class PrinterRestController {
 
     @Autowired
